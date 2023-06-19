@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/hw_03_tests.dir/03_decisions_tests.o -o hw_03_tests  -lhw_03_library 
