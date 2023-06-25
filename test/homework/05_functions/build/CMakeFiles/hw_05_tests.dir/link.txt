@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/hw_05_tests.dir/05_functions_tests.o -o hw_05_tests  -lhw_05_library 

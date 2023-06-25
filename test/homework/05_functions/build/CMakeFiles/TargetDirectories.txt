@@ -1,0 +1,3 @@
+/workspaces/course-Nishantpindiproli/test/homework/05_functions/build/CMakeFiles/hw_05_tests.dir
+/workspaces/course-Nishantpindiproli/test/homework/05_functions/build/CMakeFiles/edit_cache.dir
+/workspaces/course-Nishantpindiproli/test/homework/05_functions/build/CMakeFiles/rebuild_cache.dir
