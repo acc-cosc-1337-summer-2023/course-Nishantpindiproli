@@ -1,12 +1,5 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
-
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
 #include <iostream>
 #include <vector>
-#include <cassert>
 
 int get_vector_max_value(const std::vector<int>& values) {
     int max_value = values[0];
@@ -29,30 +22,38 @@ std::vector<int> get_square_of_each_element(const std::vector<int>& values) {
 }
 
 // Unit tests
-void test_get_vector_max_value() {
+bool run_tests() {
     std::vector<int> values1 = {5, 7, -1, 99, -100, 10};
-    assert(get_vector_max_value(values1) == 99);
+    if (get_vector_max_value(values1) != 99) {
+        return false;
+    }
 
     std::vector<int> values2 = {-50, 0, -51, 50, -99, -100};
-    assert(get_vector_max_value(values2) == 50);
-}
+    if (get_vector_max_value(values2) != 50) {
+        return false;
+    }
 
-void test_get_square_of_each_element() {
-    std::vector<int> values1 = {3, 7, 2, 5, 10};
+    std::vector<int> values3 = {3, 7, 2, 5, 10};
     std::vector<int> expected1 = {9, 49, 4, 25, 100};
-    assert(get_square_of_each_element(values1) == expected1);
+    if (get_square_of_each_element(values3) != expected1) {
+        return false;
+    }
 
-    std::vector<int> values2 = {6, 1, 8, 9, 4};
+    std::vector<int> values4 = {6, 1, 8, 9, 4};
     std::vector<int> expected2 = {36, 1, 64, 81, 16};
-    assert(get_square_of_each_element(values2) == expected2);
+    if (get_square_of_each_element(values4) != expected2) {
+        return false;
+    }
+
+    return true;
 }
 
 int main() {
-    test_get_vector_max_value();
-    std::cout << "get_vector_max_value passed all tests!" << std::endl;
-
-    test_get_square_of_each_element();
-    std::cout << "get_square_of_each_element passed all tests!" << std::endl;
+    if (run_tests()) {
+        std::cout << "All tests passed!" << std::endl;
+    } else {
+        std::cout << "Some tests failed!" << std::endl;
+    }
 
     return 0;
 }
